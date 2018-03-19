@@ -1,0 +1,34 @@
+---
+author:
+-   name: Beau Johnston
+    affiliation: The Australian National University
+    email: \texttt{beau.johnston@anu.edu.au}
+-   name: Greg Falzon
+    affiliation: The University of New England
+    email: \texttt{gfalzon2@une.edu.au}
+-   name: Josh Milthorpe
+    affiliation: The Australian National University
+    email: \texttt{josh.milthorpe@anu.edu.au}
+documentclass: acm
+classoption: sigconf
+header-includes:
+    - \usepackage{booktabs}
+    - \usepackage[figurename={Figure.},tablename={Table.},listfigurename={List of Figures.},listtablename={List of Tables.}]{caption}
+    - \usepackage{tabularx}
+    - \usepackage{xargs}
+    - \usepackage[pdftex,dvipsnames]{xcolor}
+    - \usepackage[colorinlistoftodos,prependcaption,textsize=small,color=yellow]{todonotes}
+    - \usepackage{regexpatch}
+    - \usepackage{adjustbox}
+    - \usepackage{etoolbox}
+    - \usepackage[ruled]{algorithm2e}
+include-before:
+    #this is also set in ./templates/acm-longtable-fix-preamble.latex
+    #
+    - \copyrightyear{2018}
+    #- \setcopyright{acmcopyright}
+    #- \acmConference[ICPP'18]{May 6--8 2018, Portland, US}
+    #- \acmIsbn{978-1-xxxx-xxxx-x/17/11}\acmPrice{\$15.00}
+    #- \acmDoi{http://dx.doi.org/xx.xxxx/xxxxxxx.xxxxxxx}
+    
+---

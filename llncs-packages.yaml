@@ -1,0 +1,35 @@
+---
+author:
+    - Beau Johnston\inst{1}
+    - Greg Falzon\inst{2}
+    - Josh Milthorpe\inst{1}
+institute:
+    - The Australian National University \newline \email{\{beau.johnston,josh.milthorpe\}@anu.edu.au} \and The University of New England \newline \email{gfalzon2@une.edu.au}
+
+      #-   name: Beau Johnston
+      #    institute: The Australian National University
+      #    email: \texttt{beau.johnston@anu.edu.au}
+      #-   name: Greg Falzon
+      #    institute: The University of New England
+      #    email: \texttt{gfalzon2@une.edu.au}
+      #-   name: Josh Milthorpe
+      #    affiliation: The Australian National University
+      #    email: \texttt{josh.milthorpe@anu.edu.au}
+documentclass: llncs
+classoption: runningheads
+header-includes:
+    - \usepackage{tabularx}
+    - \usepackage{booktabs}
+    - \usepackage{xargs}
+    - \usepackage[pdftex,dvipsnames]{xcolor}
+    - \usepackage[colorinlistoftodos,prependcaption,textsize=small,color=yellow]{todonotes}
+    - \usepackage{adjustbox}
+    - \usepackage{etoolbox}
+    - \usepackage[ruled]{algorithm2e}
+include-before:
+    - \makeatletter
+    - \newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+    - \makeatother
+    - \newtoggle{ACM-BUILD}
+    - \togglefalse{ACM-BUILD}
+---

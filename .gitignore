@@ -1,0 +1,9 @@
+.DS_Store
+output
+figure
+analysis_tools/*.pdf
+data/feat_data
+data/cache_data
+data/energy_data
+data/time_data
+
