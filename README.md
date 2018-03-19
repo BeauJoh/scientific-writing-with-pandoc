@@ -1,3 +1,7 @@
+
+A quick demo to getting papers written quickly in markdown
+-----------------------------------------------------------
+
 Packages used to build the paper:
 
 * pandoc -- 1.19.2
