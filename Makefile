@@ -2,6 +2,7 @@ all: output/lncs-paper.pdf output/acm-paper.pdf
 
 output/acm-paper.pdf output/acm-paper.tex: paper/paper.md
 	cp ./styles/acm.cls .
+	mkdir -p ./output
 	pandoc  --wrap=preserve \
 		--filter pandoc-crossref \
 		--filter pandoc-citeproc \
@@ -15,6 +16,7 @@ output/acm-paper.pdf output/acm-paper.tex: paper/paper.md
 
 output/lncs-paper.pdf output/lncs-paper.tex: paper/paper.md
 	cp ./styles/llncs.cls .
+	mkdir -p ./output
 	pandoc  --wrap=preserve \
 		--filter pandoc-crossref \
 		--filter pandoc-citeproc \
