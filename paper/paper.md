@@ -10,10 +10,8 @@ Use of this methodology will result in scheduling of the most appropriate device
 An evaluation around the accuracy of predictions over a subset of the Extended OpenDwarfs Benchmark Suite is also presented.
 "
 keywords: "workload characterization, accelerator, modelling, prediction, HPC"
-date: "March 19, 2018"
+date: "March 20, 2018"
 bibliography: ./bibliography/bibliography.bib
-documentclass: acmart
-classoption: sigconf
 ---
 
 <!--
@@ -46,6 +44,13 @@ ACM 10 page limit
 
 #Related Work
 
+Augonnet et al.[@augonnet2010data] propose a task scheduling framework on a per-node basis for efficiently issuing work between multiple heterogeneous accelerators.
+The focus of this work is on dynamic scheduling of tasks while automating data transfers between processing units to better utilise many GPUs HPC systems.
+Of interest, is the additional effort placed into evaluating scaling of two benchmark applications over multiple nodes -- each of which are comprised of many GPUs.
+However, this work does not perform identification of workload to determine the suitability or optimal accelerator for each task.
+Instead, the evaluation presented was for two fixed benchmark applications that were required to be rewritten using their MPI-like library.
+
+\todo{other references}
 
 #Experimental Setup
 
@@ -72,8 +77,8 @@ Or rather the expected ranges of each feature under which a direct comparison ca
 #Constructing a model -- Random Forest Regression
 
 The R programming language was used to analyse the data, construct the model and analyse the results.
-In particular the `Ranger` package by Wright and Ziegler~\cite{JSSv077i01} was used to for the development of the regression model. 
-It is a fast implementation of the Random Forest Breiman~\cite{breiman2001random} or recursive partitioning of high dimensional data.
+In particular the `Ranger` package by Wright and Ziegler [@JSSv077i01] was used to for the development of the regression model. 
+It is a fast implementation of the Random Forest Breiman [@breiman2001random] or recursive partitioning of high dimensional data.
 
 #Pruning Forests -- Refining Models
 
@@ -95,7 +100,7 @@ These parameters and the corresponding search space include:
 It is important to survey the entire optimisation space by adjusting these parameters since performance of the resultant model can vary significantly with these parameters.
 
 However, too many compute resources are required for an exhaustive grid search of this space.
-Instead, the Flexible Global Optimization with Simulated-Annealing, in particular the variant found in the R package \textit{optimization} by Husmann, Lange and Spiegel~\cite{husmannr}, was used to examine the consistency of these model tuning parameters.
+Instead, the Flexible Global Optimization with Simulated-Annealing, in particular the variant found in the R package \textit{optimization} by Husmann, Lange and Spiegel [@husmannr], was used to examine the consistency of these model tuning parameters.
 The simulated-annealing method both reduces the risk of getting trapped in a local minimum and is able to deal with irregular and complex parameter spaces as well as with non-continuous and sophisticated loss functions.
 In this setting, it is desirable to minimise the out of bag prediction error of the resultant fitted model, by simultaneously changing the parameters (num.trees, mtry and min.node.size).
 The function \textit{optim\_sa} allows us to define the search space of interest, a starting position, a function that changes the magnitude of the steps according the the relative change in points and the function (which is a wrapper of the ranger function accepting the 3 parameters and returning a cost function — the predicted error) for which the minimum is found.
@@ -125,7 +130,7 @@ It is performed over a subset of search-space (where min.node.size was set to 9)
 Full coverage was achieved by selecting starting locations in each of the 4 corners along with 8 random internal points — to avoid missing out on some critical internal structure or to emphasise internal details.
 Under each run, the \textit{optim\_sa} was allowed to execute until a global minimum was found.
 At each step of optimisation a full trace was collected, where all parameters and the corresponding out of bag prediction error value was logged to a file.
-This file was finally loaded, the points interpolated — using duplication between points <!-- interp(x=x$mtry,y=x$num.trees,z=x$prediction.error,duplicate=TRUE,extrap=FALSE)--> — and the heatmap generated, using the image.plot function from the fields package~\cite{nychkar}.
+This file was finally loaded, the points interpolated — using duplication between points <!-- interp(x=x$mtry,y=x$num.trees,z=x$prediction.error,duplicate=TRUE,extrap=FALSE)--> — and the heatmap generated, using the image.plot function from the fields package [@nychkar].
 
 A lower out of the bag prediction error is better.
 Interestingly, we see that there are many similarly small minima and implies that ranger provides a good fit with a high number of “mtry”, variance between optimal model fitting is largely unaffected by selecting the “num.trees”. 
@@ -330,15 +335,15 @@ However, the model proposed is a proof of concept and shows that a general purpo
 #Evaluation
 
 
-Figure~\ref{fig:selected-model-actual-vs-predicted-times} presents the actual kernel execution times against the predicted execution times given the optimal model.
 
 ![\label{fig:selected-model-actual-vs-predicted-times} The predicted verses measured execution times of all kernels ](figure/actual-vs-predicted-size-plot-1.pdf)
 
-Figure~\ref{fig:selected-model-actual-vs-predicted-times} shows the predicted versus the measured datum and are sorted according to problem size.
-Each kernel timing is presented as a dot.
+
+Figure~\ref{fig:selected-model-actual-vs-predicted-times} presents the experienced --and measured-- kernel execution times against the predicted execution times given the optimal model.
+Each kernel timing is presented as a dot, and each of these data points have been sorted according to problem size.
 Generally, most of these points are linearly correlated and indicate a good model fit such that the predicted times closely match the experimentally measured execution times of each kernel.
 Under predictions typically occur on 4 kernels over the medium and large problem sizes, while over predictions occur on the tiny and small problem sizes.
-However these outliers are visually over represented in this figure as the final mean absolute error low, at ~0.16.
+However these outliers are visually over represented in this figure as the final mean absolute error low, at ~0.15.
 
 
 
@@ -348,16 +353,21 @@ However these outliers are visually over represented in this figure as the final
 This section is added to highlight the difference in predicted vs measure performance on a per kernel basis and highlights the suitability and a working usage of the model in the scheduling setting.
 
 
-![\label{fig:predictive-heatmap-accuracy} The absolute difference between medians of predicted vs measured execution times for each kernel over 4 problem sizes.](figure/predictive-heatmap-accuracy-1.pdf)
 
-```
-## TableGrob (2 x 2) "arrange": 4 grobs
-##   z     cells    name           grob
-## 1 1 (1-1,1-1) arrange gtable[layout]
-## 2 2 (1-1,2-2) arrange gtable[layout]
-## 3 3 (2-2,1-1) arrange gtable[layout]
-## 4 4 (2-2,2-2) arrange gtable[layout]
-```
+
+
+\begin{figure}
+\centering
+\iftoggle{ACM-BUILD}{
+%acm
+\includegraphics[width=0.80\columnwidth]{./figure/predictive-heatmap-accuracy-1.pdf}
+}{
+%llncs
+\includegraphics[width=0.95\textwidth,height=0.95\textheight,keepaspectratio]{./figure/predictive-heatmap-accuracy-1.pdf}
+}
+\caption{The absolute difference between medians of predicted vs measured execution times for each kernel over 4 problem sizes.}
+\label{fig:predictive-heatmap-accuracy}
+\end{figure}
 
 
 4 heatmaps are presented per each problem size in Figure~\ref{fig:predictive-heatmap-accuracy}, tiny is presented in the top-left, small in the top-right, medium bottom-left, large bottom-right.
@@ -386,7 +396,7 @@ For this particular instance of a small GEM computation an individual kernel -- 
 
 
 
-However, the prediction has a mean error of 0.72 milliseconds, which is typically an order of magnitude better than experimental variance.
+However, the prediction has a mean error of 0.85 milliseconds, which is typically an order of magnitude better than experimental variance.
 
 As such, the proposed model provides accurate execution time predictions on a per kernel run basis, and is highly useful for estimating time on an accelerator which in turn is critical for scheduling of these resources on supercomputers.
 
