@@ -12,5 +12,5 @@ Packages used to build the paper include:
 * pandoc-citeproc -- 0.10.4
 * pandoc-crossref -- 0.3.0.0
 
-Feel free to ask me questions about markdown/pandoc and R integration.
-
+[Feel free to ask me questions!](mailto:beau@inbeta.org) about markdown/pandoc and R integration.
+The corresponding pdfs can be viewed here as [ACM](https://inbeta.org/wp-content/uploads/2018/05/acm-paper.pdf), [IEEE](https://inbeta.org/wp-content/uploads/2018/05/ieee-paper.pdf) and [LNCS](https://inbeta.org/wp-content/uploads/2018/05/lncs-paper.pdf).
