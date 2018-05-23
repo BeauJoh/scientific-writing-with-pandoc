@@ -19,9 +19,9 @@
 \newcommand{\removelatexerror}{\let\@latex@error\@gobble}
 \xpatchcmd{\@todo}{\setkeys{todonotes}{#1}}{\setkeys{todonotes}{inline,#1}}{}{}
 \newtoggle{IEEE-BUILD}
-\togglefalse{IEEE-BUILD}
+\toggletrue{IEEE-BUILD}
 \newtoggle{ACM-BUILD}
-\toggletrue{ACM-BUILD}
+\togglefalse{ACM-BUILD}
 \newtoggle{LNCS-BUILD}
 \togglefalse{LNCS-BUILD}
 \makeatother

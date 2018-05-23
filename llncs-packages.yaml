@@ -1,20 +1,11 @@
 ---
 author:
     - Beau Johnston\inst{1}
-    - Greg Falzon\inst{2}
-    - Josh Milthorpe\inst{1}
+    - Sarah Somebody\inst{2}
+    - Joan Otherperson\inst{1}
 institute:
-    - The Australian National University \newline \email{\{beau.johnston,josh.milthorpe\}@anu.edu.au} \and The University of New England \newline \email{gfalzon2@une.edu.au}
+    - The Australian National University \newline \email{\{beau.johnston,jotherperson\}@anu.edu.au} \and University of Coolville \newline \email{ssomebody@coolville.edu}}
 
-      #-   name: Beau Johnston
-      #    institute: The Australian National University
-      #    email: \texttt{beau.johnston@anu.edu.au}
-      #-   name: Greg Falzon
-      #    institute: The University of New England
-      #    email: \texttt{gfalzon2@une.edu.au}
-      #-   name: Josh Milthorpe
-      #    affiliation: The Australian National University
-      #    email: \texttt{josh.milthorpe@anu.edu.au}
 documentclass: llncs
 classoption: runningheads
 header-includes:
@@ -32,4 +23,8 @@ include-before:
     - \makeatother
     - \newtoggle{ACM-BUILD}
     - \togglefalse{ACM-BUILD}
+    - \newtoggle{IEEE-BUILD}
+    - \togglefalse{IEEE-BUILD}
+    - \newtoggle{LNCS-BUILD}
+    - \toggletrue{LNCS-BUILD}
 ---

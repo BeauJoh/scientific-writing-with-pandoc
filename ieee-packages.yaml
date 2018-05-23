@@ -1,0 +1,29 @@
+---
+#author details are set in the author ieee-author-preamble.latex file
+documentclass: IEEEtran
+classoption: conference
+header-includes:
+    - \usepackage{booktabs}
+    - \usepackage[figurename={Figure.},tablename={Table.},listfigurename={List of Figures.},listtablename={List of Tables.}]{caption}
+    - \usepackage{tabularx}
+    - \usepackage{cite}
+    - \usepackage{amsmath,amssymb,amsfonts}
+    - \usepackage{textcomp}
+    - \usepackage{xargs}
+    - \usepackage[colorinlistoftodos,prependcaption,textsize=small,color=yellow]{todonotes}
+    - \usepackage{regexpatch}
+    - \usepackage{adjustbox}
+    - \usepackage{etoolbox}
+    - \usepackage[noend,ruled]{algorithm2e}
+    - \usepackage{float}
+    - \usepackage{threeparttable}
+    - \usepackage[binary-units=true]{siunitx}
+    - \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+include-before:
+    #ACM-BUILD LNCS-BUILD and IEEE-BUILD are set in ./templates/ieee-longtable-fix-preamble.latex
+    - \makeatletter
+    - \xpatchcmd{\@todo}{\setkeys{todonotes}{#1}}{\setkeys{todonotes}{inline,#1}}{}{}
+    - \newcommand{\@maketitle}{\@title}{\color{\@titlecolor}\@title}{}{}
+    - \makeatother
+    - \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+---

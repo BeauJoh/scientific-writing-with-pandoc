@@ -3,12 +3,12 @@ author:
 -   name: Beau Johnston
     affiliation: The Australian National University
     email: \texttt{beau.johnston@anu.edu.au}
--   name: Greg Falzon
-    affiliation: The University of New England
-    email: \texttt{gfalzon2@une.edu.au}
--   name: Josh Milthorpe
-    affiliation: The Australian National University
-    email: \texttt{josh.milthorpe@anu.edu.au}
+-   name: Sarah Somebody
+    affiliation: University of Coolville
+    email: \texttt{ssomebody@coolville.edu}
+-   name: Joan Otherperson
+    affiliation: Evil Underground Lair Inc
+    email: \texttt{jotherperson@evil.co}
 documentclass: acm
 classoption: sigconf
 header-includes:
@@ -23,8 +23,7 @@ header-includes:
     - \usepackage{etoolbox}
     - \usepackage[ruled]{algorithm2e}
 include-before:
-    #this is also set in ./templates/acm-longtable-fix-preamble.latex
-    #
+    #ACM-BUILD LNCS-BUILD and IEEE-BUILD are set in ./templates/acm-longtable-fix-preamble.latex
     - \copyrightyear{2018}
     #- \setcopyright{acmcopyright}
     #- \acmConference[ICPP'18]{May 6--8 2018, Portland, US}
