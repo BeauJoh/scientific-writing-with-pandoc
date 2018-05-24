@@ -138,6 +138,8 @@ $if(strikeout)$
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
 \def\tightlist{}
+\floatsep 0.85\baselineskip plus  0.2\baselineskip minus  0.2\baselineskip
+\textfloatsep 1.55\baselineskip plus  0.2\baselineskip minus  0.4\baselineskip
 $if(numbersections)$
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$

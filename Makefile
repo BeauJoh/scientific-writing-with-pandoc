@@ -1,4 +1,4 @@
-all: output/acm-paper.pdf output/acm-paper.tex #output/ieee-paper.pdf output/lncs-paper.pdf #output/ieee-paper.tex output/lncs-paper.tex output/acm-paper.tex
+all: output/acm-paper.pdf output/acm-paper.tex output/ieee-paper.pdf output/lncs-paper.pdf #output/ieee-paper.tex output/lncs-paper.tex output/acm-paper.tex
 
 output/ieee-paper.pdf output/ieee-paper.tex: paper/paper.md
 	cp ./styles/IEEEtran.cls .
