@@ -1,0 +1,75 @@
+
+\acmConference[XCONF'18]{May 6--8 2018, Portland, US}
+\acmISBN{978-1-xxxx-xxxx-x/17/11}
+\acmDOI{http://dx.doi.org/xx.xxxx/xxxxxxx.xxxxxxx}
+\acmYear{2018}
+\copyrightyear{2018}
+\acmArticle{4}
+\acmPrice{\$15.00}
+
+\def\sharedaffiliation{%
+\end{tabular}
+\begin{tabular}{c}}
+%
+
+\author{Beau Johnston}
+\orcid{0000-0001-5426-1415}
+\affiliation{
+    \department{Research School of Computer Science}
+    \institution{Australian National University}
+    \city{Canberra} 
+    \state{Australia}
+}
+\email{beau.johnston@anu.edu.au}
+
+\author{Sarah Somebody}
+\orcid{0000-0000-0000-0000}
+\affiliation{
+    \department{School of Awesome}
+    \institution{University of Coolville}
+    \city{Moon Base Alpha} 
+    \state{The Moon}
+}
+\email{ssomebody@coolville.edu}
+
+\author{Joan Otherperson}
+\orcid{0000-0002-3588-9896}
+\affiliation{
+    \department{Deathray Development Team}
+    \institution{Evil Underground Lair Inc}
+    \city{Alaska}
+    \state{US}
+}
+\email{jotherperson@evil.co}
+
+\begin{CCSXML}
+    <ccs2012>
+    <concept>
+    <concept_id>10010520.10010553.10010562</concept_id>
+    <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+    <concept_significance>500</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010520.10010575.10010755</concept_id>
+    <concept_desc>Computer systems organization~Redundancy</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010520.10010553.10010554</concept_id>
+    <concept_desc>Computer systems organization~Robotics</concept_desc>
+    <concept_significance>100</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10003033.10003083.10003095</concept_id>
+    <concept_desc>Networks~Network reliability</concept_desc>
+    <concept_significance>100</concept_significance>
+    </concept>
+    </ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Computer systems organization~Embedded systems}
+\ccsdesc[300]{Computer systems organization~Redundancy}
+\ccsdesc{Computer systems organization~Robotics}
+\ccsdesc[100]{Networks~Network reliability}
+
+\keywords{pandoc, productivity, awesome}
+

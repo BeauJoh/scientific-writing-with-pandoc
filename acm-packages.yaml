@@ -1,22 +1,12 @@
 ---
-author:
--   name: Beau Johnston
-    affiliation: The Australian National University
-    email: \texttt{beau.johnston@anu.edu.au}
--   name: Sarah Somebody
-    affiliation: University of Coolville
-    email: \texttt{ssomebody@coolville.edu}
--   name: Joan Otherperson
-    affiliation: Evil Underground Lair Inc
-    email: \texttt{jotherperson@evil.co}
-documentclass: acm
+#authors are set in the acm-author-preamble.latex
+documentclass: acmart
 classoption: sigconf
 header-includes:
     - \usepackage{booktabs}
     - \usepackage[figurename={Figure.},tablename={Table.},listfigurename={List of Figures.},listtablename={List of Tables.}]{caption}
     - \usepackage{tabularx}
     - \usepackage{xargs}
-    - \usepackage[pdftex,dvipsnames]{xcolor}
     - \usepackage[colorinlistoftodos,prependcaption,textsize=small,color=yellow]{todonotes}
     - \usepackage{regexpatch}
     - \usepackage{adjustbox}
@@ -24,10 +14,6 @@ header-includes:
     - \usepackage[ruled]{algorithm2e}
 include-before:
     #ACM-BUILD LNCS-BUILD and IEEE-BUILD are set in ./templates/acm-longtable-fix-preamble.latex
-    - \copyrightyear{2018}
     #- \setcopyright{acmcopyright}
-    #- \acmConference[ICPP'18]{May 6--8 2018, Portland, US}
-    #- \acmIsbn{978-1-xxxx-xxxx-x/17/11}\acmPrice{\$15.00}
-    #- \acmDoi{http://dx.doi.org/xx.xxxx/xxxxxxx.xxxxxxx}
-    
+    - \setcopyright{rightsretained}
 ---

@@ -60,7 +60,11 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
-\usepackage[unicode=true]{hyperref}
+%\usepackage[unicode=true]{hyperref}
+%\RequirePackage{color}
+\usepackage{xcolor}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage[bookmarksnumbered,unicode]{hyperref}
 $if(colorlinks)$
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 $endif$
@@ -202,6 +206,8 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+\begin{document}
+
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -210,39 +216,21 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
-%\author{
-%$for(author)$
-%	$if(author.name)$
-%		\alignauthor
-%		$author.name$\\
-%		$if(author.affiliation)$
-%			\affaddr{$author.affiliation$}\\
-%		$endif$
-%		$if(author.email)$
-%			\email{$author.email$}\\
-%		$endif$
-%	$endif$
-%	$sep$ \alignauthor
-%$endfor$
-%}
-\author{$for(author)$
+$for(author)$
 $if(author.name)$
-	$author.name$\\
+\author{$author.name$}
 $endif$
-$if(author.affiliation)$
-	\affaddr{$author.affiliation$}\\
-$endif$
+%$if(author.affiliation)$
+%\affiliation{$author.affiliation$}
+%$endif$
 $if(author.email)$
-	\email{$author.email$}\\
+\email{$author.email$}
 $endif$
-$sep$ \and $endfor$}
+$endfor$
 $endif$
+
 \date{$date$}
 
-\begin{document}
-$if(title)$
-\maketitle
-$endif$
 $if(abstract)$
 \begin{abstract}
 $abstract$
@@ -251,8 +239,8 @@ $endif$
 
 $for(include-before)$
 $include-before$
-
 $endfor$
+
 $if(toc)$
 {
 $if(colorlinks)$
@@ -268,6 +256,11 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
+
+$if(title)$
+\maketitle
+$endif$
+
 $body$
 
 $if(natbib)$
