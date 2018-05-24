@@ -1,4 +1,4 @@
-all: output/acm-paper.pdf output/ieee-paper.pdf output/lncs-paper.pdf #output/ieee-paper.tex output/lncs-paper.tex output/acm-paper.tex
+all: output/acm-paper.pdf output/acm-paper.tex #output/ieee-paper.pdf output/lncs-paper.pdf #output/ieee-paper.tex output/lncs-paper.tex output/acm-paper.tex
 
 output/ieee-paper.pdf output/ieee-paper.tex: paper/paper.md
 	cp ./styles/IEEEtran.cls .
@@ -32,7 +32,6 @@ output/acm-paper.pdf output/acm-paper.tex: paper/paper.md
 		--include-before-body=./acm-author-preamble.latex \
 		--template=./templates/acm.latex \
 		-o output/acm-paper.$(subst output/acm-paper.,,$@) paper/paper.md
-#		--template=./templates/acm.latex \
 	rm ./acmart.cls
 
 output/lncs-paper.pdf output/lncs-paper.tex: paper/paper.md

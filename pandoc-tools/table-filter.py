@@ -78,6 +78,7 @@ def do_filter(k, v, f, m):
             table.append(latex(r'\begin{table*}[tb]' '\n' r'\centering' '\n'))
             if wide > -1:
                 table.append(latex(r'\begin{wide}' '\n'))
+            table.append(tbl_caption(v[0]))
             table.append(latex(r'\begin{tabularx}{\linewidth}{%s}' % tbl_alignment(v[1], 'X') + ('\n' r'\toprule')))
             delimiter = r'\\'
         # not floating, use longtable
@@ -93,7 +94,6 @@ def do_filter(k, v, f, m):
             table.append(latex(r'\end{tabularx}'))
             if wide > -1:
                 table.append(latex(r'\end{wide}' '\n'))
-            table.append(tbl_caption(v[0]))
             table.append(latex(r'\end{table*}'))
         else:
           table.append(latex(r'\end{tabular}'))
