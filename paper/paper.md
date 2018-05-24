@@ -238,7 +238,7 @@ The procedure to determine how the model performance improves with more kernels 
 $k$ is the number unique kernels available during model development, $s$ is the desired sample size, $\phi$ is a data frame of the combined AIWC feature-space with measured runtime results.
 In this investigation, $k = 37$ and $s = 500$ are used.
 
-The model optimization parameters were taken from Section~\ref{sec:skip-one-finding-an-optima} and since it has been shown that these are suitable for the larger model tuning space is fixed for all model generation.
+The model optimization parameters were taken from Section~\ref{sec:finding-the-critical-number-of-kernels} and since it has been shown that these are suitable for the larger model tuning space is fixed for all model generation.
 
 
 <!-- see ../analysis_tools/suitable_kernel_counts.R for implementation -->

@@ -17,4 +17,4 @@ Packages used to build the paper include:
 * pandoc-crossref -- 0.3.0.0
 
 Feel free to ask me questions via [email](mailto:beau@inbeta.org) about markdown/pandoc and R integration.
-The corresponding pdfs can be viewed here as [ACM](https://inbeta.org/wp-content/uploads/2018/05/acm-paper.pdf), [IEEE](https://inbeta.org/wp-content/uploads/2018/05/ieee-paper.pdf) and [LNCS](https://inbeta.org/wp-content/uploads/2018/05/lncs-paper.pdf).
+The corresponding pdfs can be viewed here as [ACM](https://inbeta.org/wp-content/uploads/2018/05/acm-paper-1.pdf), [IEEE](https://inbeta.org/wp-content/uploads/2018/05/ieee-paper-1.pdf) and [LNCS](https://inbeta.org/wp-content/uploads/2018/05/lncs-paper-1.pdf).
