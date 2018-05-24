@@ -7,11 +7,6 @@
 \acmArticle{4}
 \acmPrice{\$15.00}
 
-\def\sharedaffiliation{%
-\end{tabular}
-\begin{tabular}{c}}
-%
-
 \author{Beau Johnston}
 \orcid{0000-0001-5426-1415}
 \affiliation{
