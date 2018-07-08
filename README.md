@@ -12,9 +12,9 @@ Best of all, if you're about to submit the paper and need to finally focus on ty
 
 Packages used to build the paper include:
 
-* pandoc -- 1.19.2
+* pandoc -- 1.19.2 [available here](https://github.com/jgm/pandoc/releases/tag/1.19.2)
 * pandoc-citeproc -- 0.10.4
-* pandoc-crossref -- 0.3.0.0
+* pandoc-crossref -- 0.3.0.0 [available here](https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.0.0)
 
 Feel free to ask me questions via [email](mailto:beau@inbeta.org) about markdown/pandoc and R integration.
 The corresponding pdfs can be viewed here as [ACM](https://inbeta.org/wp-content/uploads/2018/05/acm-paper-1.pdf), [IEEE](https://inbeta.org/wp-content/uploads/2018/05/ieee-paper-1.pdf) and [LNCS](https://inbeta.org/wp-content/uploads/2018/05/lncs-paper-1.pdf).
