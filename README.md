@@ -10,6 +10,31 @@ I get really distracted writing LaTeX directly -- it's really easy to lose track
 This is where writing in markdown really shines; it allow's you the flexibility of LaTeX -- since TeX can be embedded at any part of the document -- without you going down the long road of type-setting and losing your train of thought.
 Best of all, if you're about to submit the paper and need to finally focus on typesetting it's easy to generate a LaTeX output of your work and edit as you normally would using the classic TeX workflow.
 
+# Installation
+
+This project uses Docker to facilitate reproducibility. As such, it has the following dependency:
+
+* Docker -- available [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+To generate a docker image named workbook, run:
+
+`docker build -t workbook .`
+
+# Run
+
+To start the docker image run:
+
+`docker run  -it --mount src=`pwd`,target=/workspace,type=bind -p 8888:8888 --net=host workbook`
+
+# Building papers with docker and pandoc
+
+Within the fresh shell running on the docker workspace instance run:
+
+`make`
+
+# Building papers the hard way:
+
+The version of pandoc that I started on involved a brittle tool-chain with very fragile haskel filters, as such, this method of running pandoc to build papers is not advised.
 Packages used to build the paper include:
 
 * pandoc -- 1.19.2 [available here](https://github.com/jgm/pandoc/releases/tag/1.19.2)
@@ -18,3 +43,5 @@ Packages used to build the paper include:
 
 Feel free to ask me questions via [email](mailto:beau@inbeta.org) about markdown/pandoc and R integration.
 The corresponding pdfs can be viewed here as [ACM](https://inbeta.org/wp-content/uploads/2018/05/acm-paper-1.pdf), [IEEE](https://inbeta.org/wp-content/uploads/2018/05/ieee-paper-1.pdf) and [LNCS](https://inbeta.org/wp-content/uploads/2018/05/lncs-paper-1.pdf).
+
+
